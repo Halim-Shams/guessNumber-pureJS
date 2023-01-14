@@ -14,7 +14,7 @@
 
 <body class="bg-gray-800 flex flex-col gap-20">
     <nav class="flex justify-between w-full pt-4 px-3">
-        <button class="bg-gray-100 rounded-md py-3 px-6 text-xl border font-mains text-gray-800">
+        <button id="btn-again" class="bg-gray-100 rounded-md py-3 px-6 text-xl border font-mains text-gray-800">
 				Again!
 			</button>
         <p class="text-gray-100 text-sm">Betweem 1 and 20</p>
@@ -24,23 +24,27 @@
             <p class="text-4xl">Guess My Number!</p>
             <div class="relative flex items-center justify-center">
                 <p class="bg-gray-100 absolute w-24 text-4xl text-gray-800 py-5 rounded-lg flex items-center justify-center">
-                    <span>12</span>
+                    <span id="secret-num">?</span>
                 </p>
                 <div class="bg-gray-100 w-screen h-2 rounded-full"></div>
             </div>
         </main>
         <div class="flex justify-around w-11/12">
             <div class="flex flex-col items-center gap-3">
-                <input type="number" min="1" max="20" class="bg-gray-800 text-center rounded-md border-[3px] w-40 outline-none border-sky-200 text-gray-100 text-3xl py-4 px-2" />
-                <button class="text-gray-800 text-lg bg-gray-100 py-3 rounded-md px-3.5 text-center">
+                <input type="number" id="guessed" min="1" max="20" class="bg-gray-800 text-center rounded-md border-[3px] w-40 outline-none border-sky-200 text-gray-100 text-3xl py-4 px-2" />
+                <button id="btn-check" class="text-gray-800 text-lg bg-gray-100 py-3 rounded-md px-3.5 text-center">
 						Check!
 					</button>
             </div>
             <div class="flex flex-col justify-between">
-                <p class="text-gray-100 text-lg">Start guessing..</p>
+                <p id="hint" class="text-gray-100 text-lg">Start guessing..</p>
                 <div class="flex flex-col gap-2.5">
-                    <p class="text-gray-100">💯 Score: <span id="score">20</span></p>
-                    <p class="text-gray-100">🥇 Highscore: <span id="score">0</span></p>
+                    <p class="text-gray-100">
+                        💯 Score: <span class="text-sky-300" id="score"></span>
+                    </p>
+                    <p class="text-gray-100">
+                        🥇 Highscore: <span id="high-score"></span>
+                    </p>
                 </div>
             </div>
         </div>
