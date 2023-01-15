@@ -1,6 +1,8 @@
 const btn_again = document.getElementById('btn-again');
 const btn_check = document.getElementById('btn-check');
 const hint = document.getElementById('hint');
+const overlay = document.querySelector('#overlay');
+const modal = document.querySelector('#modal');
 const secret_num = document.getElementById('secret-num');
 const entered_num = document.getElementById('guessed');
 const score = document.getElementById('score');
@@ -13,7 +15,14 @@ let highScore = 0;
 high_score.innerText = highScore;
 
 btn_check.addEventListener('click', () => {
-    if (entered_num.value == random_number) {
+    if (entered_num.value.length == 0) {
+        overlay.classList.remove('hidden');
+        modal.classList.remove('hidden');
+        overlay.addEventListener('click', () => {
+            overlay.classList.add('hidden');
+            modal.classList.add('hidden');
+        });
+    } else if (entered_num.value == random_number) {
         document.body.style.backgroundColor = '#0E9F6E';
         entered_num.style.backgroundColor = '#0E9F6E';
         secret_num.style.color = '#0E9F6E';
