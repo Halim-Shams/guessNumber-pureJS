@@ -7,3 +7,19 @@
         font-family: 'Press Start 2P';
     }
 }
+
+.hhee {
+    animation-name: animatetop;
+    animation-duration: 0.2s;
+}
+
+@keyframes animatetop {
+    from {
+        top: -12rem;
+        opacity: 0;
+    }
+    to {
+        top: 33%;
+        opacity: 1;
+    }
+}
